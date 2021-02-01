@@ -1,0 +1,68 @@
+.card {
+  @apply rounded-xl absolute origin-center overflow-hidden select-none;
+  width: 335px;
+  height: 220px;
+  background: radial-gradient(100% 128.38% at 100% 100%, rgba(51, 168, 253, 0.2) 0%, rgba(76, 0, 200, 0.2) 100%);
+  box-shadow: rgb(39 77 153 / 20%) 0 30px 60px, rgb(0 0 0 / 20%) 0 0 0 0.5px inset;
+  backdrop-filter: blur(20px);
+  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+  transition-delay: 50ms;
+  z-index: 0;
+  transform: perspective(80px) rotateY(0deg);
+
+  &:hover {
+    width: 502px;
+    height: 330px;
+    z-index: 5;
+
+    div {
+      max-height: 330px;
+      overflow: visible;
+    }
+  }
+}
+
+.card1 {
+  background: radial-gradient(100% 128.38% at 100% 100%, rgba(117, 224, 230, 0.4) 0%, rgba(57, 19, 184, 0.4) 100%);
+  left: calc(100vw - 50% - 130px);
+  top: calc(100vh - 50% - 40px);
+
+  &:hover {
+    transform: translate(-93px, -120px) perspective(1500px) rotateY(-6deg);
+  }
+}
+
+.card2 {
+  background: radial-gradient(
+    100% 128.38% at 100% 100%,
+    rgba(131, 58, 180, 0.4) 0%,
+    rgba(253, 29, 29, 0.4) 50%,
+    rgba(252, 176, 69, 0.4) 100%
+  );
+  left: calc(100vw - 50% - 300px);
+  top: calc(100vh - 50% - 150px);
+
+  &:hover {
+    transform: perspective(1500px) translate(15px, -116px) rotateY(6deg);
+  }
+}
+
+.card3 {
+  background: radial-gradient(100% 128.38% at 100% 100%, rgba(242, 252, 254, 0.4) 0%, rgba(28, 146, 210, 0.4) 100%);
+  left: calc(100vw - 50% - 30px);
+  top: calc(100vh - 50% - 120px);
+
+  &:hover {
+    transform: translate(-175px, -125px) perspective(1500px) rotateY(-6deg);
+  }
+}
+
+.card4 {
+  background: radial-gradient(100% 128.38% at 100% 100%, rgba(168, 255, 120, 0.4) 0%, rgba(120, 255, 214, 0.4) 100%);
+  left: calc(100vw - 50% - 100px);
+  top: calc(100vh - 50% - 250px);
+
+  &:hover {
+    transform: translate(-123px, -50px) perspective(1500px) rotateY(6deg);
+  }
+}

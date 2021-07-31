@@ -8,25 +8,25 @@ class InlineStylesHead extends Head {
     const {
       assetPrefix,
       devOnlyCacheBusterQueryString,
-      dynamicImports,
-    } = this.context
-    const cssFiles = files.allFiles.filter((f) => f.endsWith('.css'))
-    const sharedFiles = new Set(files.sharedFiles)
+      dynamicImports
+    } = this.context;
+    const cssFiles = files.allFiles.filter((f) => f.endsWith(".css"));
+    const sharedFiles = new Set(files.sharedFiles);
 
     // Unmanaged files are CSS files that will be handled directly by the
     // webpack runtime (`mini-css-extract-plugin`).
     let dynamicCssFiles = dedupe(
-      dynamicImports.filter((f) => f.file.endsWith('.css'))
-    ).map((f) => f.file)
+      dynamicImports.filter((f) => f.file.endsWith(".css"))
+    ).map((f) => f.file);
     if (dynamicCssFiles.length) {
-      const existing = new Set(cssFiles)
+      const existing = new Set(cssFiles);
       dynamicCssFiles = dynamicCssFiles.filter(
         (f) => !(existing.has(f) || sharedFiles.has(f))
-      )
-      cssFiles.push(...dynamicCssFiles)
+      );
+      cssFiles.push(...dynamicCssFiles);
     }
 
-    let cssLinkElements = []
+    let cssLinkElements = [];
     cssFiles.forEach((file) => {
 
       if (!process.env.__NEXT_OPTIMIZE_CSS) {
@@ -37,10 +37,10 @@ class InlineStylesHead extends Head {
               file
             )}${devOnlyCacheBusterQueryString}`}
             dangerouslySetInnerHTML={{
-              __html: readFileSync(join(process.cwd(), '.next', file), 'utf-8'),
+              __html: readFileSync(join(process.cwd(), ".next", file), "utf-8")
             }}
           />
-        )
+        );
       }
 
       cssLinkElements.push(
@@ -50,48 +50,49 @@ class InlineStylesHead extends Head {
             file
           )}${devOnlyCacheBusterQueryString}`}
           dangerouslySetInnerHTML={{
-            __html: readFileSync(join(process.cwd(), '.next', file), 'utf-8'),
+            __html: readFileSync(join(process.cwd(), ".next", file), "utf-8")
           }}
         />
-      )
-    })
+      );
+    });
 
     if (
-      process.env.NODE_ENV !== 'development' &&
+      process.env.NODE_ENV !== "development" &&
       process.env.__NEXT_OPTIMIZE_FONTS
     ) {
       cssLinkElements = this.makeStylesheetInert(
         cssLinkElements
-      )
+      );
     }
 
-    return cssLinkElements.length === 0 ? null : cssLinkElements
+    return cssLinkElements.length === 0 ? null : cssLinkElements;
   }
 
 }
 
 function dedupe(bundles) {
-  const files = new Set()
-  const kept = []
+  const files = new Set();
+  const kept = [];
 
   for (const bundle of bundles) {
-    if (files.has(bundle.file)) continue
-    files.add(bundle.file)
-    kept.push(bundle)
+    if (files.has(bundle.file)) continue;
+    files.add(bundle.file);
+    kept.push(bundle);
   }
-  return kept
+  return kept;
 }
 
 export default class NextDocument extends Document {
   render() {
     return (
-      <Html lang="">
+      <Html lang="en">
         <Head>
+          <title>Cedric Kring</title>
           <InlineStylesHead />
         </Head>
         <body>
-          <Main />
-          <NextScript />
+        <Main />
+        <NextScript />
         </body>
       </Html>
     );

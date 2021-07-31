@@ -14,7 +14,7 @@ export function AboutMe() {
       <p className="font-extralight">
         I'm a student at University of Duisburg-Essen, Germany doing my bachelors in software engineering. When I'm not actively studying, I
         work at PwC Germany as a part-time software engineer on AI and Machine Learning stuff. Though I'm rather on the front- and backend
-        side than on the data science side. Most of the things I'm working on involves NodeJS, with frameworks like Nest.js and React +
+        side than on the data science side. Most of the things I'm working on involves Node.js, with frameworks like NestJS and React +
         Relay. Sometimes I really like to improve my love-hate relationship with Kubernetes or I just implement some cool looking UIs.
       </p>
     </Card>

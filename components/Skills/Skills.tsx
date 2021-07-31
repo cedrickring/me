@@ -24,7 +24,7 @@ export default function Skills() {
 
       <div className="ml-4 mb-8">
         <h1 className="font-extralight text-xl">Technologies / Frameworks</h1>
-        <p>Kubernetes, Docker, NodeJS, NestJS, GraphQL, Relay, IaC (Pulumi), Spring Boot</p>
+        <p>Kubernetes, Docker, Node.js, NestJS, React, GraphQL, Relay, Angular, Git, IaC (Pulumi), Spring Boot</p>
       </div>
     </Card>
   );

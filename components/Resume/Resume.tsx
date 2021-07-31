@@ -14,23 +14,25 @@ interface Job {
   title: string;
   company: string;
   length: string;
-  location: string;
 }
 
 export default function Resume() {
   const jobs = useMemo<Job[]>(
     () => [
       {
+        title: "Software Engineer",
+        company: "PwC Germany, Düsseldorf, DE",
+        length: "Jan 2021 - Present"
+      },
+      {
         title: "Working Student Software Engineer",
-        company: "PwC Germany",
-        length: "Oct 2017 - Present",
-        location: "Düsseldorf, Germany"
+        company: "PwC Germany, Düsseldorf, DE",
+        length: "Oct 2017 - Dec 2020",
       },
       {
         title: "Working Student",
-        company: "ThyssenKrupp Steel Europe AG",
+        company: "ThyssenKrupp Steel Europe AG, Dortmund, DE",
         length: "May 2017 - Sept 2017",
-        location: "Dortmund, Germany"
       }
     ],
     []
@@ -44,15 +46,14 @@ export default function Resume() {
       notHoveredContainerClassName="flex items-center justify-center"
       iconClassName="h-10 mb-2"
     >
-      <div>
+      <div className="space-y-4">
         {jobs.map((job, index) => (
           <div key={`job-${index}`} className="grid grid-cols-2-auto gap-2">
             <span className="w-3.5">{index === 0 ? "➤" : ""}</span>
-            <div className="mb-8">
+            <div>
               <h1 className="font-thin text-xl">{job.title}</h1>
               <h4>{job.length}</h4>
               <h5 className="font-extralight">{job.company}</h5>
-              <h5 className="font-extralight">{job.location}</h5>
             </div>
           </div>
         ))}

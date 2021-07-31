@@ -16,11 +16,22 @@ export default function Education() {
       notHoveredContainerClassName="flex items-end justify-end"
       notHoveredClassName="flex gap-2 items-center flex-row mr-5 mb-4"
     >
-      <div className="w-full h-full flex flex-col items-center justify-center">
-        <div>
-          <h1 className="font-thin text-2xl">Software Engineering Bachelors</h1>
-          <h4 className="text-lg">Oct 2016 - Present</h4>
-          <h5 className="text-lg font-extralight">University of Duisburg-Essen</h5>
+      <div className="flex flex-col space-y-8 mx-4">
+        <div className="grid grid-cols-2-auto gap-2">
+          <span className="w-3.5">{"➤"}</span>
+          <div>
+            <h1 className="font-thin text-xl">Computer Science Masters</h1>
+            <h4>August 2021 - Present</h4>
+            <h5 className="font-extralight">Technische Universität Berlin</h5>
+          </div>
+        </div>
+        <div className="grid grid-cols-2-auto gap-2">
+          <span className="w-3.5">{""}</span>
+          <div>
+            <h1 className="font-thin text-xl">Software Engineering Bachelors</h1>
+            <h4>Oct 2016 - July 2021</h4>
+            <h5 className="font-extralight">University of Duisburg-Essen</h5>
+          </div>
         </div>
       </div>
     </Card>

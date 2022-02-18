@@ -1,9 +1,14 @@
 import "tailwindcss/tailwind.css";
 import "../styles/globals.scss";
-import React from "react";
+import { Component, FunctionComponent, JSXElementConstructor } from "react";
 import Head from "next/head";
 
-function App({ Component, pageProps }) {
+interface Props {
+  Component: JSXElementConstructor<any>;
+  pageProps: unknown;
+}
+
+function App({ Component, pageProps }: Props) {
   return (
     <>
       <Head>

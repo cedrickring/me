@@ -1,14 +1,14 @@
 import clsx from "clsx";
 import styles from "../../styles/Card.module.scss";
-import { ReactElement } from "react";
+import { JSXElementConstructor, ReactNode } from "react";
 
 type Props = {
   notHoveredClassName?: string;
   notHoveredContainerClassName?: string;
-  icon: JSX.Element | any;
+  icon: JSXElementConstructor<{ className: string }>;
   iconClassName?: string;
   name: string;
-  children: ReactElement | string | ReactElement[];
+  children: ReactNode;
 };
 
 export default function Card({

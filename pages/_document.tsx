@@ -5,11 +5,7 @@ import { readFileSync } from "fs";
 
 class InlineStylesHead extends Head {
   getCssLinks(files) {
-    const {
-      assetPrefix,
-      devOnlyCacheBusterQueryString,
-      dynamicImports
-    } = this.context;
+    const { assetPrefix, devOnlyCacheBusterQueryString, dynamicImports } = this.context;
     const cssFiles = files.allFiles.filter((f) => f.endsWith(".css"));
     const sharedFiles = new Set(files.sharedFiles);
 
@@ -18,24 +14,19 @@ class InlineStylesHead extends Head {
     let dynamicCssFiles = dedupe(dynamicImports.filter((importName) => importName.endsWith(".css"))).map((f) => f.file);
     if (dynamicCssFiles.length) {
       const existing = new Set(cssFiles);
-      dynamicCssFiles = dynamicCssFiles.filter(
-        (f) => !(existing.has(f) || sharedFiles.has(f))
-      );
+      dynamicCssFiles = dynamicCssFiles.filter((f) => !(existing.has(f) || sharedFiles.has(f)));
       cssFiles.push(...dynamicCssFiles);
     }
 
     let cssLinkElements = [];
     cssFiles.forEach((file) => {
-
       if (!process.env.__NEXT_OPTIMIZE_CSS) {
         cssLinkElements.push(
           <style
             key={file}
-            data-href={`${assetPrefix}/_next/${encodeURI(
-              file
-            )}${devOnlyCacheBusterQueryString}`}
+            data-href={`${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`}
             dangerouslySetInnerHTML={{
-              __html: readFileSync(join(process.cwd(), ".next", file), "utf-8")
+              __html: readFileSync(join(process.cwd(), ".next", file), "utf-8"),
             }}
           />
         );
@@ -44,28 +35,20 @@ class InlineStylesHead extends Head {
       cssLinkElements.push(
         <style
           key={file}
-          data-href={`${assetPrefix}/_next/${encodeURI(
-            file
-          )}${devOnlyCacheBusterQueryString}`}
+          data-href={`${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`}
           dangerouslySetInnerHTML={{
-            __html: readFileSync(join(process.cwd(), ".next", file), "utf-8")
+            __html: readFileSync(join(process.cwd(), ".next", file), "utf-8"),
           }}
         />
       );
     });
 
-    if (
-      process.env.NODE_ENV !== "development" &&
-      process.env.__NEXT_OPTIMIZE_FONTS
-    ) {
-      cssLinkElements = this.makeStylesheetInert(
-        cssLinkElements
-      );
+    if (process.env.NODE_ENV !== "development" && process.env.__NEXT_OPTIMIZE_FONTS) {
+      cssLinkElements = this.makeStylesheetInert(cssLinkElements);
     }
 
     return cssLinkElements.length === 0 ? null : cssLinkElements;
   }
-
 }
 
 function dedupe(bundles) {
@@ -88,8 +71,8 @@ export default class NextDocument extends Document {
           <InlineStylesHead />
         </Head>
         <body>
-        <Main />
-        <NextScript />
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );

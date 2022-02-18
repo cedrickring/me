@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://rsms.me/inter/inter.css");
-
 @layer utilities {
   .vertical-text {
     writing-mode: vertical-lr;

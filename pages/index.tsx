@@ -1,3 +1,4 @@
+import '@fontsource/inter/latin.css';
 import styles from "../styles/Home.module.scss";
 import clsx from "clsx";
 import Header from "../components/header/Header";

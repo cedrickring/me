@@ -1,7 +1,7 @@
 import "@fontsource/inter/latin.css";
 import styles from "../styles/Home.module.scss";
 import clsx from "clsx";
-import Header from "../components/header/Header";
+import Header from "../components/Header/Header";
 import { AboutMe } from "../components/AboutMe/AboutMe";
 import Resume from "../components/Resume/Resume";
 import Education from "../components/Education/Education";

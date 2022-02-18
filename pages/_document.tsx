@@ -15,9 +15,7 @@ class InlineStylesHead extends Head {
 
     // Unmanaged files are CSS files that will be handled directly by the
     // webpack runtime (`mini-css-extract-plugin`).
-    let dynamicCssFiles = dedupe(
-      dynamicImports.filter((f) => f.file.endsWith(".css"))
-    ).map((f) => f.file);
+    let dynamicCssFiles = dedupe(dynamicImports.filter((importName) => importName.endsWith(".css"))).map((f) => f.file);
     if (dynamicCssFiles.length) {
       const existing = new Set(cssFiles);
       dynamicCssFiles = dynamicCssFiles.filter(
@@ -87,7 +85,6 @@ export default class NextDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>Cedric Kring</title>
           <InlineStylesHead />
         </Head>
         <body>

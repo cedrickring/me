@@ -9,7 +9,7 @@ function Icon({ className }: { className: string }) {
   );
 }
 
-const Link = forwardRef<HTMLAnchorElement, ComponentPropsWithRef<"a">>((props, ref) => {
+const Link = forwardRef<HTMLAnchorElement, ComponentPropsWithRef<"a">>(function Link(props, ref) {
   return <a ref={ref} {...props} className="underline underline-offset-2 decoration-dotted" />;
 });
 

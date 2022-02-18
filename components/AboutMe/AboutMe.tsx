@@ -12,10 +12,11 @@ export function AboutMe() {
   return (
     <Card icon={Icon} name={"About Me"} notHoveredClassName="inline-flex flex-col ml-10" notHoveredContainerClassName="flex items-center">
       <p className="font-extralight">
-        I'm a student at the Institute of Technology in Berlin pursuing my masters in Computer Science. When I'm not actively studying, I
-        work at PwC Germany as a part-time software engineer on AI and Machine Learning stuff. Though I'm rather on the front- and backend
-        side than on the data science side. Most of the things I'm working on involves Node.js, with frameworks like NestJS and React +
-        Relay. As my job also gave me the opportunity to dive into DevOps stuff, I also like to work with Cloud / Kubernetes stuff.
+        I&apos;m a student at the Institute of Technology in Berlin pursuing my masters in Computer Science. When I&apos;m not actively
+        studying, I work at PwC Germany as a part-time software engineer on AI and Machine Learning stuff. Though I&apos;m rather on the
+        front- and backend side than on the data science side. Most of the things I&apos;m working on involves Node.js, with frameworks like
+        NestJS and React + Relay. As my job also gave me the opportunity to dive into DevOps stuff, I also like to work with Cloud /
+        Kubernetes stuff.
       </p>
     </Card>
   );

@@ -1,5 +1,4 @@
 import Card from "../Card/Card";
-import { useMemo } from "react";
 
 function Icon({ className }: { className: string }) {
   return (
@@ -15,28 +14,25 @@ interface Job {
   length: string;
 }
 
-export default function Resume() {
-  const jobs = useMemo<Job[]>(
-    () => [
-      {
-        title: "Software Engineer",
-        company: "PwC Germany, Düsseldorf, DE",
-        length: "Jan 2021 - Present",
-      },
-      {
-        title: "Working Student Software Engineer",
-        company: "PwC Germany, Düsseldorf, DE",
-        length: "Oct 2017 - Dec 2020",
-      },
-      {
-        title: "Working Student",
-        company: "ThyssenKrupp Steel Europe AG, Dortmund, DE",
-        length: "May 2017 - Sept 2017",
-      },
-    ],
-    []
-  );
+const jobs: Job[] = [
+  {
+    title: "Software Engineer",
+    company: "PwC Germany, Berlin, DE",
+    length: "Jan 2021 - Present",
+  },
+  {
+    title: "Working Student Software Engineer",
+    company: "PwC Germany, Düsseldorf, DE",
+    length: "Oct 2017 - Dec 2020",
+  },
+  {
+    title: "Working Student",
+    company: "ThyssenKrupp Steel Europe AG, Dortmund, DE",
+    length: "May 2017 - Sept 2017",
+  },
+];
 
+export default function Resume() {
   return (
     <Card
       icon={Icon}

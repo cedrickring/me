@@ -22,7 +22,7 @@ export default function Education() {
           <div>
             <h1 className="font-thin text-xl">Computer Science Masters</h1>
             <h4>August 2021 - Present</h4>
-            <h5 className="font-extralight">Technische Universität Berlin</h5>
+            <h5 className="font-extralight">Institute of Technology, Berlin</h5>
           </div>
         </div>
         <div className="grid grid-cols-2-auto gap-2">

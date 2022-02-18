@@ -1,4 +1,5 @@
 import Card from "../Card/Card";
+import { ComponentPropsWithRef, forwardRef } from "react";
 
 function Icon({ className }: { className: string }) {
   return (
@@ -7,6 +8,10 @@ function Icon({ className }: { className: string }) {
     </svg>
   );
 }
+
+const Link = forwardRef<HTMLAnchorElement, ComponentPropsWithRef<"a">>((props, ref) => {
+  return <a ref={ref} {...props} className="underline underline-offset-2 decoration-dotted" />;
+});
 
 export default function Skills() {
   return (
@@ -20,11 +25,15 @@ export default function Skills() {
         <h1 className="font-extralight text-xl">Languages</h1>
         <p className="font-semibold">Good: Java- / TypeScript, Java, Kotlin, Go, HTML, CSS</p>
         <p className="font-light">Mediocre: Bash, Python</p>
+        <p className="font-extralight text-xs space-y-0.5">Side note: I love the type system of TypeScript!</p>
       </div>
 
       <div className="ml-4 mb-8">
         <h1 className="font-extralight text-xl">Technologies / Frameworks</h1>
-        <p>Kubernetes, Docker, Node.js, NestJS, React, GraphQL, Relay, Angular, Git, IaC (Pulumi), Spring Boot</p>
+        <p>
+          Kubernetes, Docker, Node.js, NestJS, Next, React, GraphQL, Relay, Angular, RxJS, Git, IaC (Pulumi & Terraform), Spring Boot,{" "}
+          <Link href="https://nx.dev/">Nx</Link>, <Link href="https://www.prisma.io/">Prisma</Link>
+        </p>
       </div>
     </Card>
   );

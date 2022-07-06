@@ -12,8 +12,12 @@ jobs:
         name: Setup node 16
         with:
           node-version: "16"
-      - run: pnpm --frozen-lockfile
-        name: Install dependencies
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.5.0
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
       - run: pnpm lint
         name: Run eslint
       - run: pnpm format:check

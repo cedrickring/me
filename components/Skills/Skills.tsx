@@ -25,7 +25,6 @@ export default function Skills() {
         <h1 className="font-extralight text-xl">Languages</h1>
         <p className="font-semibold">Good: Java- / TypeScript, Java, Kotlin, Go, HTML, CSS</p>
         <p className="font-light">Mediocre: Bash, Python</p>
-        <p className="font-extralight text-xs space-y-0.5">Side note: I love the type system of TypeScript!</p>
       </div>
 
       <div className="ml-4 mb-8">
